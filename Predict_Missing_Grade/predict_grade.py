@@ -4,7 +4,7 @@
 from sklearn import linear_model
 
 from modeling import RunningModel
-from hackerrank.read_files import json_like_input, read_stdinput, read_file
+from ..read_files import json_like_input, read_stdinput, read_file
 
 
 def main():
