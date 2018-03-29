@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from read_files import json_like_input, read_stdinput, read_file
-from modeling import RunningModel
-from sklearn import linear_model, svm
+from sklearn import linear_model
 
-# if __name__ == '__main__':
+from modeling import RunningModel
+from hackerrank.read_files import json_like_input, read_stdinput, read_file
+
 
 def main():
     data = read_file('./training-and-test/training.json')
