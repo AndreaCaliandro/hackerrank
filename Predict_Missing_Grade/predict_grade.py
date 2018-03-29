@@ -23,5 +23,4 @@ def main():
     test_df = json_like_input(data).fillna(0).drop('serial', axis=1)
     features = test_df.as_matrix()
     y_pred = ml.model.predict(features)
-    for grade in y_pred:
-        print grade
+    print "\n".join(y_pred.astype(str))
