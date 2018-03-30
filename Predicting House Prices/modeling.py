@@ -1,11 +1,8 @@
-import itertools
-import matplotlib.pyplot as plt
+
 import numpy as np
-import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
-from sklearn.model_selection import cross_val_score, train_test_split
 
 
 class RunningModel():
@@ -39,11 +36,11 @@ class RunningModel():
 
     def price_estimator(self):
         y_pred = self.model.predict(self.X_train)
-        print 'RMSE on train data:', np.sqrt(metrics.mean_squared_error(self.y_train, y_pred))
+        print 'RMSE on train data:', np.sqrt(metrics.mean_squared_error(self.Target, y_pred))
         self.score(y_pred)
 
     def score(self, y_pred):
-        d = abs(y_pred - self.y_train)/self.y_train
+        d = abs(y_pred - self.Target)/self.Target
         vfunc = np.vectorize(lambda x: max(x - 0.1, 0))
         d_adj = vfunc(d)
         scoref = np.vectorize(lambda x: max(1 - x, 0))
